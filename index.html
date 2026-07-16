@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atlas Mondial Interactif </title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <h1> Atlas Mondial 🌍 Interactif Dimeus Rosalvo </h1>
+    <p class="subtitle">Découvrez la carte d'identité de n'importe quel pays du monde</p>
+  </header>
+
+  <nav class="site-nav" aria-label="Navigation principale">
+    <ul>
+      <li><a href="#recherche">Recherche</a></li>
+      <li><a href="#resultat">Résultat</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="recherche" class="search-section" aria-labelledby="search-title">
+      <h2 id="search-title">Rechercher un pays</h2>
+      <form id="search-form" class="search-form" novalidate>
+        <div class="form-group">
+          <label for="country-input">Nom du pays</label>
+          <input
+            type="text"
+            id="country-input"
+            name="country"
+            placeholder="Ex : Haiti, France, Japan..."
+            autocomplete="off"
+          >
+          <span id="country-error" class="error-message" role="alert"></span>
+        </div>
+        <button type="submit" class="btn-search">Rechercher</button>
+      </form>
+    </section>
+
+    <section id="resultat" class="result-section" aria-labelledby="result-title">
+      <h2 id="result-title">Résultat</h2>
+
+      <!-- Indicateur de chargement -->
+      <div id="loader" class="loader" hidden>
+        <div class="spinner"></div>
+        <p>Chargement...</p>
+      </div>
+
+      <!-- Message d'erreur / info -->
+      <div id="message-box" class="message-box" hidden></div>
+
+      <!-- Carte d'identité du pays -->
+      <article id="country-card" class="country-card" hidden>
+        <div class="flag-wrapper">
+          <img id="country-flag" src="" alt="" class="country-flag">
+        </div>
+        <div class="country-info">
+          <h3 id="country-name"></h3>
+          <dl class="info-list">
+            <div class="info-row">
+              <dt>🏛 Capitale</dt>
+              <dd id="country-capital"></dd>
+            </div>
+            <div class="info-row">
+              <dt>👥 Population</dt>
+              <dd id="country-population"></dd>
+            </div>
+            <div class="info-row">
+              <dt>🌐 Région</dt>
+              <dd id="country-region"></dd>
+            </div>
+            <div class="info-row">
+              <dt>💰 Monnaie</dt>
+              <dd id="country-currency"></dd>
+            </div>
+            <div class="info-row">
+              <dt>💬 Langues</dt>
+              <dd id="country-languages"></dd>
+            </div>
+          </dl>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; Atlas Mondial Interactif 2026 </p>
+  </footer>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>
